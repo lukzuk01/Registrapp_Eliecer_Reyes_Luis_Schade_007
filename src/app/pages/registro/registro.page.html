@@ -5,5 +5,59 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating" color="primary">Ingrese nombre:</ion-label>
+     <ion-input type="text"></ion-input>
+  </ion-item>
 
+  <ion-item>
+   <ion-label position="floating" color="primary">Apellido paterno:</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label position="floating" color="primary">Apellido Materno:</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label color="primary">Seleccione tipo de usuario</ion-label>
+     <ion-select placeholder="Select One">
+       <ion-select-option value="P">Profesor</ion-select-option>
+       <ion-select-option value="A">Alumno</ion-select-option>
+     </ion-select>
+   </ion-item>
+
+
+   <ion-list-header>
+     <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>  
+   </ion-list-header>
+ 
+
+   <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+
+     <ion-item>
+       <ion-label position="floating" color="primary">Email: </ion-label>  
+       <ion-input type="email"
+        name="email" [(ngModel)]= "usuario.email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required>
+     </ion-input>
+    </ion-item>
+
+    <ion-item>
+     <ion-label position="floating" color="primary">Password: </ion-label>
+      <ion-input type="password"
+         name="password" [(ngModel)]= "usuario.password"
+          required>
+      </ion-input>
+     </ion-item>
+
+     <ion-button [disabled] ="formulario.invalid"
+     type="submit" expand="block" routerLink="/inicio">
+        Confirmar datos Datos
+    </ion-button>
+
+   </form>
+     
 </ion-content>
