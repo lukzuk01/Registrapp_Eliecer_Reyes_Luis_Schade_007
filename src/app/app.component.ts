@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 interface Componente{
   icon: string;
-  title: string;
-  url:string;
+  name: string;
+  redirecTo:string;
 
 }
 
@@ -16,12 +16,12 @@ export class AppComponent {
   constructor() {}
   componentes : Componente[] =[
  
-    { title: 'Profesor', 
-    url: '/Registroprofe', 
+    { name: 'Profesor', 
+    redirecTo: '/Registroprofe', 
     icon: 'people-circle-outline' },
 
-    { title: 'Alumno', 
-    url: '/Registroalumno', 
+    { name: 'Alumno', 
+    redirecTo: '/Registroalumno', 
     icon: 'people-outline' },
   ];
 }
