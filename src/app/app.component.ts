@@ -17,11 +17,11 @@ export class AppComponent {
   componentes : Componente[] =[
  
     { name: 'Profesor', 
-    redirecTo: '/Registroprofe', 
+    redirecTo: '/registroprofe', 
     icon: 'people-circle-outline' },
 
     { name: 'Alumno', 
-    redirecTo: '/Registroalumno', 
+    redirecTo: '/registroalumno', 
     icon: 'people-outline' },
   ];
 }

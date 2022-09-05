@@ -17,11 +17,11 @@ export class HomePage implements OnInit {
   componentes : Componente[] =[
  
     { name: 'Profesor', 
-    redirecTo: '/Registroprofe', 
+    redirecTo: '/registroprofe', 
     icon: 'people-circle-outline' },
 
     { name: 'Alumno', 
-    redirecTo: '/Registroalumno', 
+    redirecTo: '/registroalumno', 
     icon: 'people-outline' },
   ];
   constructor(private menuController: MenuController) { }
