@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 interface Componente{
+  icon: string;
   name: string;
-  redirecTo: string;
-  icon:string;
+  redirecTo:string;
+  }
 
-}
 @Component({
   selector: 'app-generaqr',
   templateUrl: './generaqr.page.html',
@@ -15,13 +15,15 @@ export class GeneraqrPage implements OnInit {
 
   componentes : Componente[] =[
  
-    { name: 'Profesor', 
-    redirecTo: '/registroprofe', 
-    icon: 'people-circle-outline' },
+    { icon: 'people-circle-outline', 
+      name: 'Profesor', 
+    redirecTo: '/registroprofe' 
+    },
 
-    { name: 'Alumno', 
-    redirecTo: '/registroalumno', 
-    icon: 'people-outline' },
+    { icon: 'people-outline',
+      name: 'Alumno', 
+    redirecTo: '/registroalumno'
+    },
   ];
   constructor(private menuController: MenuController) { }
 

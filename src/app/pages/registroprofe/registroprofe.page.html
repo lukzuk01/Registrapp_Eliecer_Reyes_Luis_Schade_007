@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>registroprofe</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="back"
+        color="primary"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Bienvenido Profesor</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content padding class="bg-image">
+  <form>
+    <ion-item>
+        <ion-label position="floating" color="primary">Email: </ion-label>  
+        <ion-input type="email"
+        name="email" 
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required>
+      </ion-input>
+    </ion-item>
+      
+    <ion-item>
+      <ion-label position="floating" color="primary">Password: </ion-label>
+      <ion-input type="password"
+          name="password" 
+          required>
+      </ion-input>  
+    </ion-item>
+
+    <ion-button slot="start" href="/registro">
+      <ion-label>registrarse</ion-label>
+    </ion-button>
+    
+    <ion-button slot="end" type="submit" href="/generaqr">
+      <ion-label>ingresar</ion-label>
+    </ion-button> 
+    
+  </form>
 </ion-content>

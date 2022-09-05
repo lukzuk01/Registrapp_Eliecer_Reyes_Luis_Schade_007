@@ -16,12 +16,14 @@ export class AppComponent {
   constructor() {}
   componentes : Componente[] =[
  
-    { name: 'Profesor', 
-    redirecTo: '/registroprofe', 
-    icon: 'people-circle-outline' },
+    { icon: 'people-circle-outline', 
+      name: 'Profesor', 
+    redirecTo: '/registroprofe' 
+    },
 
-    { name: 'Alumno', 
-    redirecTo: '/registroalumno', 
-    icon: 'people-outline' },
-  ];
+    { icon: 'people-outline',
+      name: 'Alumno', 
+    redirecTo: '/registroalumno'
+    },
+  ]
 }

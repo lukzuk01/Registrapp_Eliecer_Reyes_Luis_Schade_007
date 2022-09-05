@@ -3,35 +3,41 @@
     <ion-buttons slot="start">
       <ion-back-button
         defaultHref="/"
-        text="back1"
+        text="back"
         color="primary"
         mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>registroalumno</ion-title>
+    <ion-title>Bienvenido alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-  <ion-content padding class="bg-image">
+<ion-content padding class="bg-image">
+  <form>
     <ion-item>
-      <ion-label position="floating" color="primary">Emailfr: </ion-label>  
-      <ion-input type="email"
-       name="email" 
-       pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-       required>
-    </ion-input>
-   </ion-item>
-    
-   <ion-item>
-    <ion-label position="floating" color="primary">Password: </ion-label>
-     <ion-input type="password"
-        name="password" 
-         required>
-     </ion-input>
+        <ion-label position="floating" color="primary">Email: </ion-label>  
+        <ion-input type="email"
+        name="email" 
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required>
+      </ion-input>
     </ion-item>
+      
+    <ion-item>
+      <ion-label position="floating" color="primary">Password: </ion-label>
+      <ion-input type="password"
+          name="password" 
+          required>
+      </ion-input>  
+    </ion-item>
+    
+    <ion-tab-button type="submit" expand="block" href="/registro">
+      <ion-label>registrarse</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button type="submit" expand="block" href="/reciveqr">
+      <ion-label>ingresar</ion-label>
+    </ion-tab-button> 
+    
+  </form>
 </ion-content>
-
-
-
-
-  
