@@ -1,9 +1,30 @@
-<ion-header>
+<ion-header class="ion-padding">
   <ion-toolbar>
-    <ion-title>generaqr</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+      
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <h3>Su codigo QR para la clase de hoy es:</h3>
+  </div>
+
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      QR
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    generar codigo QR
+  </ion-button>
 
 </ion-content>

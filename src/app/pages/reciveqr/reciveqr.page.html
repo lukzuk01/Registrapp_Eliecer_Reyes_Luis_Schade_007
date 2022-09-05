@@ -1,9 +1,27 @@
-<ion-header>
+<ion-header class="ion-padding">
   <ion-toolbar>
-    <ion-title>reciveqr</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+      
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <h3>Acerque su camara al codigo QR</h3>
+  </div>
+
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      QR
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
