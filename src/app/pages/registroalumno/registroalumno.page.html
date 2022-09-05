@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text="back"
+        color="primary"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
     <ion-title>registroalumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+  <ion-content padding class="bg-image">
+    <ion-item>
+      <ion-label position="floating" color="primary">Email: </ion-label>  
+      <ion-input type="email"
+       name="email" [(ngModel)]= "usuario.email"
+       pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+       required>
+    </ion-input>
+   </ion-item>
+    
+   <ion-item>
+    <ion-label position="floating" color="primary">Password: </ion-label>
+     <ion-input type="password"
+        name="password" [(ngModel)]= "usuario.password"
+         required>
+     </ion-input>
+    </ion-item>
 </ion-content>
