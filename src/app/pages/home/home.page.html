@@ -1,7 +1,7 @@
 <ion-header class="ion-padding">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="mostrarMenu()">
+      <ion-button (click)="mostrarMenu ()">
         <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -14,6 +14,26 @@
 
 <ion-content>
   <div class="ion-text-center">
-    <h3>Home</h3>
+    <h3 class="Texto-inicio">"Bienvenido a RegistrAPP"</h3>
   </div>
+<ion-card class="card">
+  <ion-card-subtitle class="ion-padding" color="primary">Mantente al día de nuestra comunidad en los siguientes enlaces... </ion-card-subtitle>
+  <ion-img src="assets/Home.jpeg"></ion-img>
+   
+</ion-card> 
+
+<ion-card>
+  <ion-item href="https://www.facebook.com/DuocUC" target="_blank">
+    <ion-icon slot="start" name="logo-facebook" color="facebook"></ion-icon>
+    <ion-label >Facebook</ion-label>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item href="https://www.instagram.com/duocuc_cl/" target="_blank">
+    <ion-icon slot="start" name="logo-instagram" color="instagram"></ion-icon>
+    <ion-label >Instagram</ion-label>
+  </ion-item>
+</ion-card>
+
 </ion-content>
