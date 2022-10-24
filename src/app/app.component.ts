@@ -25,5 +25,10 @@ export class AppComponent {
       name: 'Alumno', 
     redirecTo: '/registroalumno'
     },
+    {
+      icon: 'game-controller-outline',
+      name: 'Videojuegos', 
+      redirecTo: '/videojuegos'
+    },
   ]
 }
