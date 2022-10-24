@@ -9,17 +9,17 @@
     </ion-buttons>
     <div class="ion-text-center">
       <h5>Bienvenido Alumno</h5>
-    </div>  </ion-toolbar>
-</ion-header>
-
-
-<ion-header>
-  <ion-toolbar>
-      <img alt="Silhouette of mountains" src="/assets/alumnos.png" />
+    </div>  
   </ion-toolbar>
 </ion-header>
 
-  <ion-content>
+<ion-content padding class="bg-image">
+    <ion-header>
+      <ion-toolbar>
+          <img alt="Silhouette of mountains" src="/assets/alumnos.png" />
+      </ion-toolbar>
+    </ion-header>
+
     <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
     <ion-item>
         <ion-label position="floating" color="primary">Email: </ion-label>  
