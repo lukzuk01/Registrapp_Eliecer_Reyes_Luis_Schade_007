@@ -16,19 +16,29 @@ export class AppComponent {
   constructor() {}
   componentes : Componente[] =[
  
+    { icon: 'home-outline', 
+    name: 'inicio', 
+  redirecTo: '/home' 
+   },
     { icon: 'people-circle-outline', 
       name: 'Profesor', 
-    redirecTo: '/registroprofe' 
+    redirecTo: '/generaqr' 
     },
 
     { icon: 'people-outline',
       name: 'Alumno', 
-    redirecTo: '/registroalumno'
+    redirecTo: '/reciveqr'
     },
-    {
-      icon: 'game-controller-outline',
-      name: 'Videojuegos', 
-      redirecTo: '/videojuegos'
+    { icon: 'alarm-outline',
+      name: 'Noticias', 
+    redirecTo: '/noticias'
     },
+   
+    { icon: 'log-out-outline', 
+    name: 'cerrar sesion', 
+  redirecTo: '/login' 
+  },
+
+ 
   ]
 }

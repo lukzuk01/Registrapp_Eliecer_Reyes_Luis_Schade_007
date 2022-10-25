@@ -9,22 +9,24 @@
     </ion-buttons>
     <div class="ion-text-center">
       <h5>Bienvenido Alumno</h5>
-    </div>  
-  </ion-toolbar>
+    </div>  </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="bg-image">
-    <ion-header>
-      <ion-toolbar>
-          <img alt="Silhouette of mountains" src="/assets/alumnos.png" />
-      </ion-toolbar>
-    </ion-header>
 
-    <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+<ion-content >
+  
+  <ion-header>
+    <ion-toolbar>
+        <img alt="Silhouette of mountains" src="/assets/alumnos.png" />
+    </ion-toolbar>
+  </ion-header>
+
+
+  <form>
     <ion-item>
         <ion-label position="floating" color="primary">Email: </ion-label>  
-        <ion-input type="email" placeholder="Correo"
-        name="email"  [(ngModel)]= "usuario.email"
+        <ion-input type="email"
+        name="email" 
         pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
         required>
       </ion-input>
@@ -32,18 +34,17 @@
       
     <ion-item>
       <ion-label position="floating" color="primary">Password: </ion-label>
-      <ion-input type="password" placeholder="Contraseña"
-      name="password" [(ngModel)]= "usuario.password"
+      <ion-input type="password"
+          name="password" 
           required>
       </ion-input>  
     </ion-item>
     
-    <ion-button expand="block" slot="start" href="/registro">
+    <ion-button slot="start" href="/login">
       <ion-label>registrarse</ion-label>
     </ion-button>
 
-    <ion-button [disabled] ="formulario.invalid"
-    (click)="addDatos()" expand="block"slot="end" routerLink="/reciveqr">
+    <ion-button slot="end" href="/reciveqr">
       <ion-label>ingresar</ion-label>
     </ion-button> 
     

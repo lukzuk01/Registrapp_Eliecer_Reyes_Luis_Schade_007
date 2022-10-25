@@ -1,76 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="/"
-        text="back"
-        color="primary"
-        mode="ios"></ion-back-button>
-    </ion-buttons>
-    <ion-title>registro</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-header>
-    <ion-toolbar>
-        <img alt="Silhouette of mountains" src="/assets/sede.jpg" />
-    </ion-toolbar>
-  </ion-header>
-   
-  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
-
-    <ion-item>
-      <ion-label position="floating" color="primary">Ingrese nombre:</ion-label>
-      <ion-input placeholder="Nombre" name="nombre" [(ngModel)]= "usuario.nombre  " required></ion-input>
-    </ion-item>
-
-    <ion-item>
-    <ion-label position="floating" color="primary">Apellido paterno:</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-    <ion-label position="floating" color="primary">Apellido Materno:</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-    <ion-label color="primary">Seleccione tipo de usuario</ion-label>
-      <ion-select type="genero" name="genero" [(ngModel)]= "usuario.genero">
-        <ion-select-option value="P">Profesor</ion-select-option>
-        <ion-select-option value="A">Alumno</ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating"color="primary">Ingrese su numero de telefono:</ion-label>
-      <ion-input type="numero" placeholder="Numero de telefono" name="numero" [(ngModel)]= "usuario.numero" required></ion-input>
-    </ion-item>
+  <ion-card>
+ 
+    <ion-card class="card">
+       <ion-img src="assets/registro1.jpeg"></ion-img>
   
+
+    <ion-card-content>
+       <form [formGroup]="formularioRegistro" (keyup.enter)="CrearUsuario()">
+
         <ion-item>
-          <ion-label position="floating" color="primary">Email: </ion-label>  
-          <ion-input type="email" placeholder="Correo"
-            name="email" [(ngModel)]= "usuario.email"
-            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-            required>
-        </ion-input>
+          <ion-label position="floating">Nombre..</ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
         </ion-item>
 
-      <ion-item>
-      <ion-label position="floating" color="primary">Password: </ion-label>
-        <ion-input type="password" placeholder="Contraseña"
-          name="password" [(ngModel)]= "usuario.password"
-            required>
-        </ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo..</ion-label>
+          <ion-input type="email" formControlName="correo" ></ion-input>
+        </ion-item>
 
-      <ion-button [disabled] ="formulario.invalid"
-      (click)="addDatos()" type="submit" expand="block" routerLink="/home">
-          Confirmar datos Datos
-      </ion-button>
+        <ion-item>
+          <ion-label position="floating">Password..</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
 
-   </form>
-     
+        <ion-item>
+          <ion-label position="floating">Confirma Pass..</ion-label>
+          <ion-input type="password" formControlName="confirmaPass"></ion-input>
+        </ion-item>
+
+       </form>
+       <br>
+       <ion-button color="success"(click)="CrearUsuario()" expand="block" fill="outline" shape="round">
+         Registrar
+       </ion-button>
+    </ion-card-content>
+  </ion-card> 
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink] = "['/login']">
+        Login
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -23,6 +23,15 @@ export class HomePage implements OnInit {
     { name: 'Alumno', 
     redirecTo: '/registroalumno', 
     icon: 'people-outline' },
+
+     //revisar si esta bien
+    { name: 'Noticias',
+      redirecTo: '/noticias', 
+      icon: 'alarm-outline'}, 
+      
+      { name: 'Login',
+      redirecTo: '/login', 
+      icon: 'people-outline'}, 
   ];
   constructor(private menuController: MenuController) { }
 

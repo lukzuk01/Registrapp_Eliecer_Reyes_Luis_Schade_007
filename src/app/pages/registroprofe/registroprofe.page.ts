@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ServicedatosService, Registro } from 'src/app/service/servicedatos.service';
-import { Platform, ToastController, IonList} from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-registroprofe',
@@ -9,27 +7,9 @@ import { Platform, ToastController, IonList} from '@ionic/angular';
 })
 export class RegistroprofePage implements OnInit {
 
-  registro: Registro[] = [];
-  usuario: Registro = <Registro>{};
-  
-  @ViewChild('myList')myList :IonList;  
-
-
-  constructor(private storageService: ServicedatosService, 
-    private plt: Platform, private toastController: ToastController) {
-      this.plt.ready().then(()=>{
-        this.loadDatos();
-      });
-    }
+  constructor() { }
 
   ngOnInit() {
-  }
-  
-  //get
-  loadDatos(){
-    this.storageService.getDatos().then(registro=>{
-      this.registro=registro;
-    });
   }
 
 }

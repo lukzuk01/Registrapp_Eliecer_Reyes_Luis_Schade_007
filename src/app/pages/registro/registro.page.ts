@@ -1,6 +1,10 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
-import { ServicedatosService, Registro } from 'src/app/service/servicedatos.service';
-import { Platform, ToastController, IonList} from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { RegistroserviceService, Usuario } from '../../services/registroservice.service';
+import { ToastController } from '@ionic/angular';
+import {
+  FormGroup, FormControl, Validators, FormBuilder
+} from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -9,47 +13,59 @@ import { Platform, ToastController, IonList} from '@ionic/angular';
 })
 export class RegistroPage implements OnInit {
 
-
-  registro: Registro[] = [];
-  usuario: Registro = <Registro>{};
-  
-  @ViewChild('myList')myList :IonList;  
+  formularioRegistro: FormGroup; 
+  newUsuario: Usuario = <Usuario>{};
 
 
-  constructor(private storageService: ServicedatosService, 
-    private plt: Platform, private toastController: ToastController) {
-      this.plt.ready().then(()=>{
-        this.loadDatos();
-      });
-    }
+  constructor(private alertController: AlertController,
+              private registroService: RegistroserviceService,
+              private toast: ToastController, 
+              private fb:FormBuilder) {
+                this.formularioRegistro = this.fb.group({
+                  'nombre' : new FormControl("", Validators.required), 
+                  'correo' : new FormControl("", Validators.required), 
+                  'password': new FormControl("", Validators.required), 
+                  'confirmaPass': new FormControl("", Validators.required)
+                })
+               }
 
   ngOnInit() {
   }
 
-  //get
-  loadDatos(){
-    this.storageService.getDatos().then(registro=>{
-      this.registro=registro;
+  async CrearUsuario(){
+    var form = this.formularioRegistro.value;
+    if (this.formularioRegistro.invalid){
+      this.alertError();
+    }
+    else{
+    this.newUsuario.nomUsuario=form.nombre;
+    this.newUsuario.correoUsuario=form.correo;
+    this.newUsuario.passUsuario = form.password;
+    this.newUsuario.repassUsuario=form.confirmaPass;
+    this.registroService.addUsuario(this.newUsuario).then(dato=>{ 
+      this.newUsuario=<Usuario>{};
+      this.showToast('Usuario Creado!');
     });
+    this.formularioRegistro.reset();
   }
+  }//findelmetodo
 
-   //create
-   addDatos(){
-    this.usuario.id = Date.now();
-    this.storageService.addDatos(this.usuario).then(registro=>{
-      this.usuario = <Registro>{};
-      this.showToast('!Datos Agregados');
-      this.loadDatos();
-    });
+  async alertError(){
+    const alert = await this.alertController.create({ 
+      header: 'Error..',
+      message: 'Debe completar todos los datos',
+      buttons: ['Aceptar']
+    })
+    await alert.present();
   }
 
   async showToast(msg){
-    const toast = await this.toastController.create({
-      message: msg, 
+    const toast = await this.toast.create({
+      message: msg,
       duration: 2000
-    });
-    toast.present();
+    })
+    await toast.present();
   }
 
-}
 
+}
